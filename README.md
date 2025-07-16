@@ -11,23 +11,20 @@ interview-prep/
 │   ├── arrays/
 │   ├── linked-list/
 │   ├── trees/
-│   ├── graphs/
-│   └── README.md
+│   └── graphs/
 │
 ├── streams/              # Java 8+ Streams API examples
 │   ├── basics/
-│   ├── map-filter-reduce/
-│   └── README.md
+│   └── map-filter-reduce/
 │
 ├── multithreading/       # Multithreading and Concurrency in Java
 │   ├── thread-basics/
 │   ├── synchronization/
-│   ├── executors/
-│   └── README.md
+│   └── executors/
 │
 ├── system-design/        # (Optional) System Design Notes and Examples
 │
-├── patterns/             # Common Coding and Design Patterns
+├── designPatterns/             # Common Coding and Design Patterns
 │
 └── README.md             # You're here!
 ```
