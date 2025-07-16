@@ -22,6 +22,8 @@ interview-prep/
 │   ├── synchronization/
 │   └── executors/
 │
+├── generics/
+│
 ├── system-design/        # (Optional) System Design Notes and Examples
 │
 ├── designPatterns/             # Common Coding and Design Patterns
