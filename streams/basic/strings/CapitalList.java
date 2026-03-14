@@ -1,4 +1,4 @@
-package streams.basic;
+package streams.basic.strings;
 
 import java.util.Arrays;
 import java.util.List;
