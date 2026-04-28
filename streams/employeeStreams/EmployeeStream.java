@@ -4,6 +4,7 @@ import streams.employeeStreams.mockData.CompanyData;
 import streams.employeeStreams.mockData.EmployeeData;
 
 import java.util.Collections;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -19,11 +20,11 @@ public class EmployeeStream {
         //How many male and female employees are there in the organization?
         //maleAndFemaleEmployeesCount();
 
-        //Sort the List of Employee objects based on salary in Ascending order
-        // empSalAscending();
+        //Sort the List of Employee objects based on salary in ascending order
+        System.out.println("Employee list based on there salary in ascending order"+empSalAscending());
 
         //DoubleSummeryStatistics implementation for max,min,avg,total,count
-        // employeeStats();
+        System.out.println("Average salary of each employee: "+employeeStats("avg"));
 
         //All Employees in each Department
         // listOfEmployeesInEachDepartments();
@@ -79,6 +80,8 @@ public class EmployeeStream {
 
     }
 
+
+
     /**
      * This method will return the number of employees in the organization.
      * We will use the count() method of Stream API to get the count of employees.
@@ -91,6 +94,26 @@ public class EmployeeStream {
         return CompanyData.employeeData().stream().map(EmployeeData::getSalary).sorted().collect(Collectors.toList());
     }
 
+    private static List<Double> empSalAscending() {
+        return CompanyData.employeeData().stream().map(EmployeeData::getSalary).sorted().toList().reversed();
+    }
 
+    private static double employeeStats(String ch) {
+
+        DoubleSummaryStatistics empStats = CompanyData
+                .employeeData()
+                .stream()
+                .collect(
+                        Collectors.summarizingDouble(EmployeeData::getSalary)
+                );
+
+        return switch (ch) {
+            case "avg" -> empStats.getAverage();
+            case "sum" -> empStats.getSum();
+            case "min" -> empStats.getMin();
+            case "max" -> empStats.getMax();
+            default -> 0.0;
+        };
+    }
 
 }
