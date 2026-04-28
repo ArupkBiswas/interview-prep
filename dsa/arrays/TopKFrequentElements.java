@@ -33,7 +33,7 @@ public class TopKFrequentElements {
         int k = 1;
         Map<Integer, Long> freqMap = Arrays.stream(n).boxed().collect(
                 Collectors.groupingBy(
-                        Function.identity(),
+                        i->i,
                         Collectors.counting()
                 )
         );
