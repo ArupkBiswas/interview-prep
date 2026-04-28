@@ -14,6 +14,6 @@ public class PrintFromArray {
     }
 
     private static int[] elementsFromArray(int[] a, int n) {
-
+        return new int[0];
     }
 }
