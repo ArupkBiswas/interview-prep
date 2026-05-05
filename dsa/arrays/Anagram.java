@@ -21,7 +21,7 @@ public class Anagram {
         for(int i = 0; i < s1.length(); i++){
             arr[s1.charAt(i)-'a']++;
             arr[s2.charAt(i)-'a']--;
-            System.out.println("s1 : "+(s1.charAt(i)-'a')+" s2 : "+(s2.charAt(i)-'a'));
+            //System.out.println("s1 : "+(s1.charAt(i)-'a')+" s2 : "+(s2.charAt(i)-'a'));
         }
 
         for(int count : arr){
