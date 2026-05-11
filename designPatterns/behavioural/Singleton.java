@@ -1,4 +1,4 @@
 package designPatterns.behavioural;
 
-public class NewBehaviour {
+public class Singleton {
 }
