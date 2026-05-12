@@ -1,5 +1,7 @@
 package streams.employeeStreams.mockData;
 
+import java.util.Objects;
+
 public class EmployeeData {
     int id;
     String name;
@@ -58,5 +60,23 @@ public class EmployeeData {
                 +", Department : "+department
                 +", Year Of Joining : "+yearOfJoining
                 +", Salary : "+salary;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        EmployeeData that = (EmployeeData) o;
+        return id == that.id
+                && age == that.age
+                && yearOfJoining == that.yearOfJoining
+                && Double.compare(salary, that.salary) == 0
+                && Objects.equals(name, that.name)
+                && Objects.equals(gender, that.gender)
+                && Objects.equals(department, that.department);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, age, gender, department, yearOfJoining, salary);
     }
 }
